@@ -48,11 +48,11 @@ const makeMiddleEarth = () => {
 
   // 1. create a section tag with an id of middle-earth
   
-  const $middleEarth = $('<section id = "middle-earth"></section>');
+  const $middleEarthEl = $('<section id = "middle-earth"></section>');
 
   // 2. append the section to the body of the DOM.
 
-  $('body').append($middleEarth);
+  $('body').append($middleEarthEl);
 
   // 3. use a for loop to iterate over the lands array that does the following:
 
@@ -60,7 +60,7 @@ const makeMiddleEarth = () => {
 
   //   3a. creates an article tag (there should be one for each land when the loop is done)
 
-  $middleEarth.append($(`<article id="${lands[i]}"><h1>${lands[i]}</h1></article>`))
+  $middleEarthEl.append($(`<article id="${lands[i]}"><h1>${lands[i]}</h1></article>`))
 
   //   3b. gives each land article an `id` tag of the corresponding land name
 
@@ -83,7 +83,15 @@ const makeHobbits = () => {
 
   // 1. display an unordered list of the hobbits in the shire.
 
+  const $ulEL = $('<ul></ul>')
+
+  $('#The-Shire').append($ulEL)
+
   // 2. give each hobbit a class of "hobbit"
+
+  for (i = 0; i < hobbits.length; i++) {
+    $ulEL.append($(`<li class = "hobbit">${hobbits[i]}</li>`))
+  }
 
   // hint: create a 'ul' outside the loop upon which to append the 'li's
 
