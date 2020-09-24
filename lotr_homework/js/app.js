@@ -167,7 +167,7 @@ const makeBuddies = () => {
 
   $('aside').append($ulEL);
 
-  for (i = 0; i < baddies.length; i++) {
+  for (i = 0; i < buddies.length; i++) {
     $ulEL.append($(`<li class = "buddy">${buddies[i]}</li>`))
   }
 
@@ -269,9 +269,15 @@ const hornOfGondor = () => {
 
   // 1. create a pop-up alert that the horn of gondor has been blown
 
+  alert('The horn of gondor has blown!')
+
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
 
+  $('.buddy:last').css('text-decoration', 'line-through')
+
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
+
+  $('.baddy:nth-last-child(2)').remove()
 
 };
 
